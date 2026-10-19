@@ -27,7 +27,7 @@ Toda la documentación técnica del despliegue, configuraciones y capturas de pa
 ### Sprint 1: Planificación, Diseño y Red
 * [01 - Arquitectura de Red y Direccionamiento IP](./docs/01-arquitectura-y-red.md)
 * [02 - Despliegue y Configuración del Router (R-N01)](./docs/02-router-R-N01.md)
-* [06 - Servidor DHCP y DNS con Docker (D-N01)](./docs/06-servidor-dhcp-dns-D-N01.md)
+* [06 - Servidor DHCP y DNS con Docker (D-N01)](./docs/06-servidor-dns-dhcp-D-N01.md)
 
 ### Sprint 2: Despliegue de Servidores y Servicios
 * [03 - Servidor Web (W-N01)](./docs/03-servidor-web-W-N01.md)
