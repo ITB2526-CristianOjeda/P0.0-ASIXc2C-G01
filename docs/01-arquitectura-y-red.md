@@ -1,6 +1,7 @@
 # 01-Arquitectura-y-red
 
 Para organizar la arquitectura de red de este proyecto, hemos tenido en cuenta cuántas redes son necesarias para ubicar todos y cada uno de los servidores, basándonos en la coherencia y en la seguridad que aporta dividirlos en las siguientes redes:
+
 <img width="1003" height="646" alt="image" src="https://github.com/user-attachments/assets/07cfe625-3c6c-4266-acce-c1ad7ffd388c" />
 
 ## Red DMZ ##
@@ -46,3 +47,7 @@ El router R-N01 conecta las tres redes principales: la DMZ, la intranet e Intern
 · Es el gateway de ambas redes.
 
 · Centraliza el control del tráfico entre zonas.
+
+## Tabla de IPs ##
+
+<img width="539" height="749" alt="image" src="https://github.com/user-attachments/assets/84de3484-58ce-41af-9206-435890ceb2e5" />
