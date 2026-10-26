@@ -11,5 +11,7 @@ Hemos juntado en la misma red estos dos servidores debido a la sinergia que hay 
 
 ### En resumen: ###
 · Ambos servidores tienen sinergia entre si
+
 · Juntos rinden mejor a la hora de transmitir y publicar archivos
+
 · Reforzamos la seguridad del sistema
