@@ -5,6 +5,7 @@ Para organizar la arquitectura de red de este proyecto, hemos tenido en cuenta c
 
 ## Red DMZ ##
 Servidor Web (W-N01)
+
 Servidor FTP (F-N01)
 
 Hemos juntado en la misma red estos dos servidores debido a la sinergia que hay entre ellos a la hora de trabajar: el servidor FTP (File Transfer Protocol) le proporciona todo el material posible al servidor web para que este pueda ser actualizado de manera natural y pueda publicar los datos que F-N01 vaya actualizando. Otra ventaja de tener estos dos servidores en la misma red es el rendimiento de la transmisión de datos entre ellos: al hacerlo así, los archivos compartidos tardan menos en ser enviados y recibidos por la otra máquina, lo que ofrece una mayor eficiencia y productividad. Por último, al dividir estos dos servidores en vez de hacerlo todo en una misma máquina, reforzamos la seguridad de ambos por igual, evitando así dar acceso directo a un posible atacante desde cualquiera de las dos máquinas.
@@ -19,8 +20,11 @@ Hemos juntado en la misma red estos dos servidores debido a la sinergia que hay 
 
 ## Intranet ##
 Servidor BBDD (B-N01)
+
 Servidor DHCP/DNS/Docker (D-N01)
+
 Cliente Windows (CLI-WIN-N01)
+
 Cliente Linux (CLI-LNX-N01)
 
 La razón por la que las máquinas B-N01 y D-N01 están en la intranet es que no son servidores que deban dar la cara al público, como sí lo son el servidor web y el FTP. Son servidores que tienen que estar lo más protegidos posible para evitar filtrar información valiosa. Además, al tener los clientes en la misma red que el DHCP, no hará falta configurar un DHCP Relay: con la configuración del propio servidor bastaría. Por último, los servicios internos de estas máquinas seguirán funcionando aunque la conexión externa se caiga.
