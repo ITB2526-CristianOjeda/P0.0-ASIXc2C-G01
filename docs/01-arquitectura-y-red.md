@@ -31,7 +31,9 @@ La razón por la que las máquinas B-N01 y D-N01 están en la intranet es que no
 
 ### En resumen: ###
 · No  están expuestas al público por estar en la intranet.
+
 · Al compartir red con los clientes, no hace falta DHCP Relay.
+
 · No necesitan conexión externa para funcionar.
 
 ## Router (R-N01) ##
