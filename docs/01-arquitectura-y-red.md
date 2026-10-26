@@ -42,5 +42,7 @@ El router R-N01 conecta las tres redes principales: la DMZ, la intranet e Intern
 
 ### En Resumen ###
 · Conecta la DMZ, la intranet e Internet.
+
 · Es el gateway de ambas redes.
+
 · Centraliza el control del tráfico entre zonas.
