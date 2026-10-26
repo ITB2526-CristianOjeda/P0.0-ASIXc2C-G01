@@ -33,3 +33,12 @@ La razón por la que las máquinas B-N01 y D-N01 están en la intranet es que no
 · No  están expuestas al público por estar en la intranet.
 · Al compartir red con los clientes, no hace falta DHCP Relay.
 · No necesitan conexión externa para funcionar.
+
+## Router (R-N01) ##
+
+El router R-N01 conecta las tres redes principales: la DMZ, la intranet e Internet. Actúa como gateway de la intranet y de la DMZ, y es el único punto de paso entre las tres, de modo que todo el tráfico entre redes pasa por él y puede ser filtrado y controlado desde un único lugar. Esto resulta especialmente útil contra ataques externos, ya que cualquier intento de acceso desde Internet tiene que atravesar el router, que es donde se puede detectar y filtrar.
+
+### En Resumen ###
+· Conecta la DMZ, la intranet e Internet.
+· Es el gateway de ambas redes.
+· Centraliza el control del tráfico entre zonas.
