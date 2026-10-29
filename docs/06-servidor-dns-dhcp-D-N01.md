@@ -73,18 +73,6 @@ ip a
 
 ## 
 
-## 
-
-## 
-
-## 
-
-## 
-
-## 
-
-## 
-
 ## **Tarea 1.5.2: Despliegue del DNS (D-N01) con Docker.**
 
 Archivo de configuración dnsmasq.conf  
