@@ -51,3 +51,10 @@ El router R-N01 conecta las tres redes principales: la DMZ, la intranet e Intern
 ## Tabla de IPs ##
 
 <img width="539" height="749" alt="image" src="https://github.com/user-attachments/assets/84de3484-58ce-41af-9206-435890ceb2e5" />
+
+
+
+
+
+
+<img width="837" height="698" alt="Captura de pantalla de 2026-10-27 15-21-08" src="https://github.com/user-attachments/assets/6f0d2db9-97c3-4bed-90ce-577f0a8cf75b" />
