@@ -10,6 +10,7 @@ Asignacion de IP:
 
 ping al router:  
 ![](img/4.png)
+
 base de datos  
 ![](img/5.png)
 
@@ -92,6 +93,7 @@ Archivo de configuración dnsmasq.conf
 Probar la resolución del nombre R-N01:  
 dig @192.168.1.3 R-N01 \+short (Resultado esperado: 192.168.1.1)  
 ![](img/17.png)
+
 Probar la resolución del alias R:     
 nslookup R 192.168.1.3 (Resultado esperado: Address: 192.168.1.1)  
 ![](img/18.png)
