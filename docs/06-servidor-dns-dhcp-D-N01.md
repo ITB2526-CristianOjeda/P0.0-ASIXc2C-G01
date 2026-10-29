@@ -1,7 +1,7 @@
 ## **Tarea 1.5: Despliegue del Servidor Docker.**
 
 Crear una máquina virtual (Hostname: D-N01) en IsardVDI en la Intranet (**ASIXc2-ITB1 \- 52:54:00:01:93:c3**) con la IP fija 192.168.1.3/24 y gateway 192.168.1.1.  
-![][image1]enp2s0  
+![][img/1.png] interfaz: enp2s0  
 Crear el Usuario: bchecker/ Password: bchecker121.   
 ![][image2]
 
