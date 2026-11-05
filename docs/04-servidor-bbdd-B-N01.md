@@ -1,5 +1,6 @@
 # B-N01 #
 B-N01 es una maquina con ubuntu server que recrea la base de datos del sistema, cuenta con el servicio de MySQL debido a ventajas como:
+
 ·  Es codigo abierto con licencia GPL
 
 ·  Cuenta con soporte en cualquier idioma de programación (PHP,Python,Node.js...)
