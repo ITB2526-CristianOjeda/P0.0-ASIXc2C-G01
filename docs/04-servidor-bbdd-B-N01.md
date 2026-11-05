@@ -16,3 +16,4 @@ Como este proyecto consta con máquinas con servicios web o clientes es especial
 Dentro de B-N01 existen usuarios en MySQL con diferentes tipos de permisos dependiendo de la funcion que tengan o queramos que tengan, como por ejemplo los siguientes:
 
 ### admin_db ###
+Usuario local que administra toda la base de datos sin la necesidad de acceder como usuario root, el usuario consta con absolutamente todos los permisos que MySQL pueda otorgar, permisos como la creación de usuarios, la edición/creación de base de datos, tablas o columnas, la capacidad de eliminar estos últimos y permisos de lectura por todo el servicio MySQL.
