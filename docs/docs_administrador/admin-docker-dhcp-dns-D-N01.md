@@ -18,3 +18,15 @@ El servidor utiliza Docker Engine y Docker Compose para levantar los servicios[c
 Para verificar el estado general del demonio de Docker en el sistema operativo:
 ```bash
 sudo systemctl status docker
+
+Todos los archivos de configuración y el archivo orquestador se encuentran en el siguiente directorio de trabajo:
+```bash
+cd /configs/docker-D-N01
+
+## 3. Comandos Útiles de Mantenimiento
+
+Para gestionar los contenedores (`dhcp_D-N01` y `dns_D-N01`), utiliza los siguientes comandos desde el directorio de trabajo `/configs/docker-D-N01`:
+
+* **Levantar los servicios en segundo plano:**
+  ```bash
+  sudo docker-compose up -d
