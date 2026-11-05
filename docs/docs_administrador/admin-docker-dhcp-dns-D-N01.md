@@ -13,7 +13,7 @@ Este documento sirve como referencia técnica para la administración, mantenimi
 
 ## 2. Gestión del Servicio Docker
 
-El servidor utiliza Docker Engine y Docker Compose para levantar los servicios[cite: 98]. 
+El servidor utiliza Docker Engine y Docker Compose para levantar los servicios. 
 
 Para verificar el estado general del demonio de Docker en el sistema operativo:
 ```bash
@@ -33,7 +33,7 @@ Para gestionar los contenedores (`dhcp_D-N01` y `dns_D-N01`), utiliza los siguie
   sudo docker-compose up -d
   ```
 
-  * **Comprobar el estado de los contenedores activos:**
+* **Comprobar el estado de los contenedores activos:**
   ```bash
   sudo docker ps
   ```
