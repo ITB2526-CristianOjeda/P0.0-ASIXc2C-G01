@@ -11,6 +11,19 @@ B-N01 es una maquina con ubuntu server que recrea la base de datos del sistema, 
 
 Como este proyecto consta con máquinas con servicios web o clientes es especialmente útil poder contar con alguna de las ventajas mencionadas anteriormente.
 
+## Arquitectura de la base de datos ##
+### Base de datos principal ###
+barcelona_educacio
+
+### Tablas ###
+equipamientos
+
+Las columnas que hay dentro de la tabla "equipamientos" están directamente importadas de un fichero formato .csv previamente otorgado, el csv es el siguiente:
+
+https://opendata-ajuntament.barcelona.cat/data/dataset/f36b60f2-9541-4d08-b0f9-
+b0a9313fab3d/resource/29d9ff10-6892-4f16-9012-d5c4997857e7/download
+
+
 
 ## Jerarquía de permisos ##
 Dentro de B-N01 existen usuarios en MySQL con diferentes tipos de permisos dependiendo de la funcion que tengan o queramos que tengan, como por ejemplo los siguientes:
