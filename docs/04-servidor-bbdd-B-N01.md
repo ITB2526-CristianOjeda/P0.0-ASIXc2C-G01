@@ -22,4 +22,4 @@ Usuario local que administra toda la base de datos sin la necesidad de acceder c
 Usuario hecho específicamente para la máquina W-N01, la intención de este usuario es que la web pueda consultar la base de datos pero que la máquina de la web también pueda acceder a la base de datos si conoce el usuario y la contraseña para poder modificar información en caso de ser necesario. app_user consta con los siguientes privilegios: lectura, insertar/modificar y eliminar tablas dentro de la base de datos de barcelona_educacio siempre que se acceda desde la máquina W-N01, ya que el acceso está restringido por IP.
 
 ### lectura ###
-Usuario para las máquinas clientes de la estructura (, 
+Usuario para las máquinas clientes de la estructura (CLI-LNX-N01 y CLI-WIN-N01)
