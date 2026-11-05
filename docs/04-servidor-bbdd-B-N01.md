@@ -11,6 +11,7 @@ B-N01 es una maquina con ubuntu server que recrea la base de datos del sistema, 
 
 Como este proyecto consta con máquinas con servicios web o clientes es especialmente útil poder contar con alguna de las ventajas mencionadas anteriormente.
 
+
 ## Arquitectura de la base de datos ##
 ### Base de datos principal ###
 barcelona_educacio
@@ -26,6 +27,7 @@ https://opendata-ajuntament.barcelona.cat/data/dataset/f36b60f2-9541-4d08-b0f9-b
 
 ## Jerarquía de permisos ##
 Dentro de B-N01 existen usuarios en MySQL con diferentes tipos de permisos dependiendo de la funcion que tengan o queramos que tengan, como por ejemplo los siguientes:
+
 
 ### admin_db ###
 Usuario local que administra toda la base de datos sin la necesidad de acceder como usuario root, "admin_db" consta con absolutamente todos los permisos que MySQL pueda otorgar, permisos como la creación de usuarios, la edición/creación de base de datos, tablas o columnas, la capacidad de eliminar estos últimos y permisos de lectura por todo el servicio MySQL.
