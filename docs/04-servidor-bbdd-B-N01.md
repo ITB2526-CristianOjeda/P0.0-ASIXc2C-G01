@@ -12,3 +12,7 @@ B-N01 es una maquina con ubuntu server que recrea la base de datos del sistema, 
 Como este proyecto consta con máquinas con servicios web o clientes es especialmente útil poder contar con alguna de las ventajas mencionadas anteriormente.
 
 
+## Jerarquía de permisos ##
+Dentro de B-N01 existen usuarios en MySQL con diferentes tipos de permisos dependiendo de la funcion que tengan o queramos que tengan, como por ejemplo los siguientes:
+
+### admin_db ###
