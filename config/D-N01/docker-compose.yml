@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  #Servicio DHCP (tarea 1.5.1)
+  dhcp-server:
+    image: networkboot/dhcpd:latest
+    container_name: dhcp_D-N01
+    network_mode: host
+    restart: always
+    environment:
+      - INTERFACE=enp2s0
+    volumes:
+      - ./dhcpd.conf:/data/dhcpd.conf:ro
+
+  #Servicio DNS (tarea 1.5.2)
+  dns-server:
+    image: 4km3/dnsmasq:latest
+    container_name: dns_D-N01
+    network_mode: host
+    restart: always
+    volumes:
+      - ./dnsmasq.conf:/etc/dnsmasq.conf:ro
+    cap_add:
+      - NET_ADMIN
