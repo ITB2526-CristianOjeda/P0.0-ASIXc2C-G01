@@ -1,4 +1,4 @@
-# Control de Versiones con Git y Autenticación Segura mediante SSH
+# Guia de Control de Versiones con Git y Autenticación Segura mediante SSH
 
 Este documento detalla la configuración del par de llaves SSH (Ed25519) para la comunicación segura con GitHub sin contraseñas interactivas, así como el flujo de trabajo de comandos Git utilizado durante el proyecto.
 
