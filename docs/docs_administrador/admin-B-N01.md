@@ -197,7 +197,8 @@ wget \-O educacion.csv "https\://opendata-ajuntament.barcelona.cat/data/dataset/
 ## Importar .CSV
 
 Antes de importar a MySQL hace falta cambiar la versión UTF ( de UTF-16 que era el original a UTF-8 para que MySQL pueda importarlo correctamente)  
-![][image23]  
+<img width="608" height="52" alt="8 1 De_UTF-16_a_UTF-8" src="https://github.com/user-attachments/assets/33d06480-7e63-4f07-b937-4e1b495439ae" />
+
    
 Habilitamos la opción local\_infile=1 para que la base de datos pueda importar archivos que estén dentro de la máquina
 
