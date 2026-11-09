@@ -70,22 +70,28 @@ Hacemos ping 8.8.8.8 (google) para comprobar que funcione correctamente
 ## Instalamos SSH para crear las claves públicas y privadas
 
 Instalamos SSH con sudo apt install ssh  
-![][image9]
+<img width="960" height="724" alt="6 1 Instalamos SSH" src="https://github.com/user-attachments/assets/d3df3afd-d291-4140-9dae-6d0ba8a54faf" />
+
 
 Comprobamos que el servicio esté activo antes de empezar con las claves  
-![][image10]
+<img width="961" height="199" alt="6 2 SSH_activo" src="https://github.com/user-attachments/assets/60a40727-123b-461e-b7f0-3a258fb13aa3" />
+
 
 Creamos la clave pública y privada con “ssh-keygen” (se guardarán en /home/bchecker/.ssh/id\_rsa):  
-![][image11]
+<img width="961" height="348" alt="6 3 ssh-Keygen" src="https://github.com/user-attachments/assets/4f94f480-093b-469a-87e7-d5cc41ae2ef0" />
+
 
 ## Cuentas MySQL:
 
-![][image12]  
+<img width="1478" height="177" alt="Captura de pantalla de 2026-11-09 15-58-23" src="https://github.com/user-attachments/assets/6c0eefce-b22c-4242-80b4-dce8c7cf1019" />
+
 [Excel](https://docs.google.com/spreadsheets/d/1pSMSdBQ_dn-vCXINd7joOUrrGLxHVaYlgL7RDUfkY08/edit?usp=sharing)
 
 ## admin\_db:
 
-![][image13]
+<img width="527" height="71" alt="7 1 MySQL_User_Admin" src="https://github.com/user-attachments/assets/11dff2f5-6ee0-48a0-8443-3621b2e55784" />
+
+
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
@@ -95,7 +101,8 @@ Creamos la clave pública y privada con “ssh-keygen” (se guardarán en /home
 | ‘admin1234’ | Contraseña para acceder |
 
 Permisos de admin\_db:  
-![][image14]
+<img width="527" height="89" alt="7 2 MySQL_User_Admin_Perms" src="https://github.com/user-attachments/assets/0ab82539-1e83-43f4-9e42-b9e21c05ffee" />
+
 
 | GRANT | Da los siguientes permisos |
 | :---- | :---- |
@@ -106,7 +113,8 @@ Permisos de admin\_db:
 
 ## app\_user
 
-![][image15]
+<img width="524" height="69" alt="7 3 1 MySQL_User_App" src="https://github.com/user-attachments/assets/5d149da7-eca1-47fa-b048-318129edf8ad" />
+
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
@@ -176,12 +184,14 @@ mysql \-u admin\_db \-p barcelona\_educacio \< /ruta/cualquiera/Nombre\_del\_bac
 
 ### Archivo mysqld.conf:
 
-![][image20]  
+<img width="957" height="729" alt="7 3 2 Fichero_mysqld cnf" src="https://github.com/user-attachments/assets/0dffc3fe-3ed0-4f40-ae92-0d4b9e90292f" />
+ 
 Editamos el bind address para que mysql conecte por la IP  192.168.1.2  
 ![][image21]
 
 Reiniciamos el servicio y comprobamos que se hayan aplicado los cambios  
-![][image22]
+<img width="706" height="81" alt="7 3 3 Prueba_funciona_3306" src="https://github.com/user-attachments/assets/f1b41ee9-7370-4f4a-9852-6d118d4bb944" />
+
 
 # Importar .CSV
 
