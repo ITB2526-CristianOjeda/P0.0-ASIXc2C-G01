@@ -17,10 +17,10 @@ Como este proyecto consta con máquinas con servicios web o clientes es especial
 
 
 ### Base de datos principal ###
-barcelona_educacio
+"barcelona_educacio"
 
 ### Tablas ###
-equipamientos
+"equipamientos"
 
 Las columnas que hay dentro de la tabla "equipamientos" están directamente importadas de un fichero formato .csv previamente otorgado, el csv es el siguiente:
 
