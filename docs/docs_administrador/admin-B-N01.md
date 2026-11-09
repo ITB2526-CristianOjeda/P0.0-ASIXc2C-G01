@@ -1,4 +1,6 @@
-# Especificaciones de la máquina B-N01:
+# Instalación de la base de datos
+
+## Especificaciones de la máquina B-N01:
 
 - Ubuntu server  
 - 8 CPUs  
@@ -10,13 +12,13 @@ Default
 Wireguard VPN  
 ASIXc2-ITB1
 
-# Objetivos:
+## Objetivos:
 
 Crear una base de datos (MySQL)  
 Hacer el DHCP con docker (contenedor 1\)  
 Hacer el DNS con docker (contenedor 2\)
 
-# Paquetes instalados:
+## Paquetes instalados:
 
 Instalar diferentes paquetes como:
 
