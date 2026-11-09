@@ -203,13 +203,17 @@ Antes de importar a MySQL hace falta cambiar la versión UTF ( de UTF-16 que era
 Habilitamos la opción local\_infile=1 para que la base de datos pueda importar archivos que estén dentro de la máquina
 
 Con ayuda de la IA he hecho un script que cree desde 0 la base de datos para poder importar el csv.  
-![][image24]
+<img width="675" height="189" alt="image" src="https://github.com/user-attachments/assets/3edc5754-8eda-4e8d-981c-6813efd6a98b" />
+
 
 Importamos la base de datos  
-![][image25]
+<img width="501" height="154" alt="image" src="https://github.com/user-attachments/assets/7960468f-cebb-4a6c-9749-ca0263355fd9" />
+
 
 Salida del comando cat  
-![][image26]
+<img width="531" height="706" alt="image" src="https://github.com/user-attachments/assets/037e3cf8-0b66-4112-b5c2-4aabc59fc6aa" />
+
 
 Todos los archivos se han cargado correctamente (2709)  
-![][image27]
+<img width="267" height="266" alt="image" src="https://github.com/user-attachments/assets/52f9b368-297a-47ef-9cc8-e312f1490e3e" />
+
