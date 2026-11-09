@@ -33,32 +33,39 @@ Password: bchecker121
 
 
 sudo usermod \-aG sudo bchecker  
-![][image2]
+<img width="492" height="138" alt="2 Permisos_sudo_bchecker" src="https://github.com/user-attachments/assets/15357356-a81b-45b8-9279-79b47059beb4" />
+
 
 ## Cambiar hostname a B-N01
 
 sudo hostnamectl hostname B-N01  
 sudo nano /etc/hosts y cambiamos ubuntu por B-N01  
-![][image3]  
-![][image4]
+<img width="338" height="44" alt="3 1 Cambio_hostname" src="https://github.com/user-attachments/assets/6b0f403a-bce4-4552-ae85-ec03cd504ff2" />
+
+<img width="496" height="52" alt="3 2 Cambio_hostname" src="https://github.com/user-attachments/assets/84e7a4f4-5876-48dd-807f-4583f7b9fd72" />
+
 
 ## Instalamos MySQL:
 
 Con sudo apt install mysql-server instalamos MySQL:
 
-## ![][image5]
+<img width="540" height="409" alt="4 Instalamos_MySQL" src="https://github.com/user-attachments/assets/3c5b6ae2-8dc5-4da5-ad92-56e66d0b5e5a" />
+
 
 ## Configuración del netplan:
 
 sudo nano /etc/netplan/00-installer-config.yaml  
-![][image6]  
+<img width="670" height="274" alt="5 1 Fichero_Netplan" src="https://github.com/user-attachments/assets/a7007e12-2f93-4e56-8904-a82914c36313" />
+
 Las partes comentadas con \# son para cuando esté listo el router, la configuración comentada son el gateway y el servidor DNS.
 
 sudo netplan apply
 
-ip \-c a![][image7]  
+<img width="774" height="393" alt="5 2 Tabla_de_IPs" src="https://github.com/user-attachments/assets/b4759081-8e89-4282-b385-9005d6292d39" />
+
 Hacemos ping 8.8.8.8 (google) para comprobar que funcione correctamente  
-![][image8]
+<img width="473" height="151" alt="5 3 Ping" src="https://github.com/user-attachments/assets/04c5b5e9-6a0f-4164-ae64-b8c76968e008" />
+
 
 ## Instalamos SSH para crear las claves públicas y privadas
 
