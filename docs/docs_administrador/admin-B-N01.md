@@ -89,8 +89,6 @@ Creamos la clave pública y privada con “ssh-keygen” (se guardarán en /home
 
 ## admin\_db:
 
-<img width="527" height="71" alt="7 1 MySQL_User_Admin" src="https://github.com/user-attachments/assets/11dff2f5-6ee0-48a0-8443-3621b2e55784" />
-
 
 
 | CREATE USER | Crea el usuario |
@@ -101,7 +99,6 @@ Creamos la clave pública y privada con “ssh-keygen” (se guardarán en /home
 | ‘admin1234’ | Contraseña para acceder |
 
 Permisos de admin\_db:  
-<img width="527" height="89" alt="7 2 MySQL_User_Admin_Perms" src="https://github.com/user-attachments/assets/0ab82539-1e83-43f4-9e42-b9e21c05ffee" />
 
 
 | GRANT | Da los siguientes permisos |
@@ -113,7 +110,6 @@ Permisos de admin\_db:
 
 ## app\_user
 
-<img width="524" height="69" alt="7 3 1 MySQL_User_App" src="https://github.com/user-attachments/assets/5d149da7-eca1-47fa-b048-318129edf8ad" />
 
 
 | CREATE USER | Crea el usuario |
@@ -123,7 +119,7 @@ Permisos de admin\_db:
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘app1234’ | Contraseña para acceder |
 
-![][image16]
+
 
 | GRANT | Da los siguientes permisos |
 | :---- | :---- |
@@ -136,7 +132,6 @@ Permisos de admin\_db:
 
 ## Lectura
 
-![][image17]
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
