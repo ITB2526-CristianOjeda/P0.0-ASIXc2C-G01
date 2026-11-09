@@ -13,6 +13,9 @@ Como este proyecto consta con máquinas con servicios web o clientes es especial
 
 
 ## Arquitectura de la base de datos ##
+<img width="1672" height="941" alt="Arquitectura de xarxa amb accessos controlats" src="https://github.com/user-attachments/assets/79d92294-cee5-4b32-9278-17eedc25e9ab" />
+
+
 ### Base de datos principal ###
 barcelona_educacio
 
