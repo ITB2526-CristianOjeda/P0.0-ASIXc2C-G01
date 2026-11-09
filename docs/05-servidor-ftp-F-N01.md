@@ -15,7 +15,7 @@ Para comprobar que el usuario funciona, conectarse localmente por SSH
 ## 
 
 ## **Tarea 2.2: Despliegue del Servidor FTP (F-N01)** 
-### 1. Configuración de Red e Interfaz DMZ (Netplan)
+### Configuración de Red e Interfaz DMZ (Netplan)
 Para integrar la máquina `F-N01` en la subred DMZ (`192.168.2.0/24`), se edita el archivo `/etc/netplan/00-installer-config.yaml` asignando la IP estática `192.168.2.3` en la interfaz `enp2s0` y la puerta de enlace del router `R-N01` (`192.168.2.1`):
 <img width="643" height="306" alt="Captura de pantalla de 2026-11-09 16-07-46" src="https://github.com/user-attachments/assets/f2a3a936-46d1-4790-b4e4-85f9231c6a85" />
 
