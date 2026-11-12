@@ -48,6 +48,7 @@ ssh -T git@github.com
 **Resultado esperado:**
 > `Hi username! You've successfully authenticated, but GitHub does not provide shell access.`
 
+Evidencia de autenticación exitosa con GitHub mediante clave SSH (ssh -T).
 <img width="1211" height="280" alt="image" src="https://github.com/user-attachments/assets/789c3e9e-bba1-4b07-b487-e8dc7701d1b0" />
 
 
@@ -92,4 +93,5 @@ git push origin main
 git pull origin main
 ```
 
+Evidencia de subida (push) al repositorio remoto mediante SSH sin contraseña.
 <img width="809" height="293" alt="image" src="https://github.com/user-attachments/assets/4db1d766-bf0f-402e-8f63-5926a264107e" />
