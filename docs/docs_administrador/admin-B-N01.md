@@ -40,7 +40,7 @@ Este manual describe cómo administrar el servidor **B-N01**, que aloja la base 
 | CLI-LNX-N01 | Cliente Linux | 192.168.1.101 | Solo pruebas, con " lectura " |
 | Internet | Exterior | cualquiera | Nunca |
 
-La DMZ es la zona más expuesta. Cada equipo de la DMZ al que se abre el puerto 3306 aumenta el riesgo, por lo que cada servicio debe tener su propia cuenta, su propia regla de firewall y los permisos mínimos.
+La DMZ es la zona más expuesta. Cada equipo de la DMZ al que se abre el puerto 3306 aumenta el riesgo, por lo que se denería restringir el acceso a todos los servicios no sean imprescindibles, en este caso hemos querido hacer pruebas y hemos dejado los usuarios, también se recomienda su propia regla de firewall y los permisos mínimos.
 
 ## 4. Acceso administrativo
 
@@ -52,7 +52,7 @@ Por SSH al servidor:
 ssh bchecker@192.168.1.2
 ```
 
-A MySQL desde el propio servidor (usa el socket, sin `-h`):
+A MySQL desde el propio servidor:
 
 ```bash
 sudo mysql
