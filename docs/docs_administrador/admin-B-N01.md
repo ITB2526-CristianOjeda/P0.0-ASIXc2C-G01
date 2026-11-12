@@ -456,14 +456,16 @@ Password: bchecker121
 <img width="414" height="263" alt="1 Crea_User_bchecker" src="https://github.com/user-attachments/assets/dbad8274-f4e2-4ef8-930c-f445bdd0790e" />
 
 
-sudo usermod \-aG sudo bchecker  
+`sudo usermod \-aG sudo bchecker ` 
 <img width="492" height="138" alt="2 Permisos_sudo_bchecker" src="https://github.com/user-attachments/assets/15357356-a81b-45b8-9279-79b47059beb4" />
 
 
 ## Cambiar hostname a B-N01
 
+```
 sudo hostnamectl hostname B-N01  
-sudo nano /etc/hosts y cambiamos ubuntu por B-N01  
+sudo nano /etc/hosts y cambiamos ubuntu por B-N01
+``` 
 <img width="338" height="44" alt="3 1 Cambio_hostname" src="https://github.com/user-attachments/assets/6b0f403a-bce4-4552-ae85-ec03cd504ff2" />
 
 <img width="496" height="52" alt="3 2 Cambio_hostname" src="https://github.com/user-attachments/assets/84e7a4f4-5876-48dd-807f-4583f7b9fd72" />
