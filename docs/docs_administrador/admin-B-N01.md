@@ -456,7 +456,7 @@ Password: bchecker121
 <img width="414" height="263" alt="1 Crea_User_bchecker" src="https://github.com/user-attachments/assets/dbad8274-f4e2-4ef8-930c-f445bdd0790e" />
 
 
-`sudo usermod \-aG sudo bchecker ` 
+`sudo usermod \-aG sudo bchecker` 
 <img width="492" height="138" alt="2 Permisos_sudo_bchecker" src="https://github.com/user-attachments/assets/15357356-a81b-45b8-9279-79b47059beb4" />
 
 
