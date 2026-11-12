@@ -516,7 +516,7 @@ Creamos la clave pública y privada con `ssh-keygen` (se guardarán en /home/bch
 
 [Excel](https://docs.google.com/spreadsheets/d/1pSMSdBQ_dn-vCXINd7joOUrrGLxHVaYlgL7RDUfkY08/edit?usp=sharing)
 
-## admin\_db:
+## admin_db:
 
 
 
@@ -527,7 +527,7 @@ Creamos la clave pública y privada con `ssh-keygen` (se guardarán en /home/bch
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘admin1234’ | Contraseña para acceder |
 
-Permisos de admin\_db:  
+Permisos de admin_db:  
 
 
 | GRANT | Da los siguientes permisos |
@@ -537,13 +537,13 @@ Permisos de admin\_db:
 | TO | A quien van dirigidos los privilegios |
 | ‘admin\_db’@’localhost’ | Usuario que recibirá los privilegios |
 
-## app\_user
+## app_user
 
 
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
-| ‘app\_user’ | Nombre del usuario |
+| ‘app_user’ | Nombre del usuario |
 | ‘192.168.2.2’ | Desde dónde se podrá acceder al usuario |
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘app1234’ | Contraseña para acceder |
@@ -556,7 +556,7 @@ Permisos de admin\_db:
 | INSERT | Otorga permisos para insertar |
 | UPDATE | Otorga permisos para modificar |
 | DELETE | Otorga permisos para eliminar datos |
-| ON barcelona.\* | Estos permisos sólo los tendrá dentro de la base de datos **“barcelona\_educacio”** |
+| ON barcelona.* | Estos permisos sólo los tendrá dentro de la base de datos **“barcelona\_educacio”** |
 | TO ‘app\_user’@’192.168.2.2’ | Solo si el usuario se conecta desde 192.168.2.2 con el propio usuario |
 
 ## Lectura
