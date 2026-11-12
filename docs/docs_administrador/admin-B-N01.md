@@ -63,7 +63,7 @@ Si el prompt es `bchecker@B-N01:~$` estás en la terminal del sistema. Si es `my
 
 ### 4.2 Normas de acceso
 
-- `root``,`` ``backup_user` y `admin_db` solo se usan desde `localhost`. Nunca de forma remota.
+- `root`,`backup_user` y `admin_db` solo se usan desde `localhost`. Nunca de forma remota.
 - No escribir contraseñas en la línea de comandos, porque quedan en el historial y en la lista de procesos. Usar `-p` sin valor.
 - Recordar que `'localhost'` en MySQL significa conexiones desde la propia máquina, incluidas las de quien entre por SSH. La barrera real es la contraseña.
 
