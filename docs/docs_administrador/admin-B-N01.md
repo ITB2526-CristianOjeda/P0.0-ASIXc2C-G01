@@ -415,13 +415,6 @@ SELECT user, host FROM information_schema.processlist;
 | Copia de seguridad | `mysqldump -u backup_user -p --single-transaction --no-tablespaces barcelona_educacio > copia.sql` |
 | Restaurar | `mysql -u admin_db -p barcelona_educacio < copia.sql` |
 
-## Control de versiones del documento
-
-| Versión | Fecha | Autor | Cambios |
-| --- | --- | --- | --- |
-| 1.0 | 09/11/2026 |  | Versión inicial |
-
-
 
 
 
