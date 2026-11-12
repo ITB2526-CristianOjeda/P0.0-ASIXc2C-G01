@@ -126,7 +126,7 @@ sudo tail -n 50 /var/log/mysql/error.log
 - **Una cuenta por servicio:** si una se compromete o se modifica, las demás no se ven afectadas, y en los registros se distingue quién hizo qué.
 - **Host concreto:** en MySQL la identidad de una cuenta es nombre más host. `'app_user'@'192.168.2.2'` y `'app_user'@'localhost'` son cuentas distintas, cada una con su contraseña y sus permisos. Cada cuenta admite un único host.
 - **Evitar comodines** como `'%'` o `'192.168.2.%'`.
-- **Sin `WITH GRANT OPTION`:** la gestión de usuarios y permisos queda reservada a root y admin_db.
+- **Sin `WITH GRANT OPTION`:** la gestión de usuarios y permisos queda reservada a root.
 
 ### 6.2 Cuentas del sistema
 
