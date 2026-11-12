@@ -451,7 +451,7 @@ Instalar diferentes paquetes como:
 
 ## Crear usuario bchecker:
 
-sudo adduser bchecker  
+`sudo adduser bchecker`  
 Password: bchecker121  
 <img width="414" height="263" alt="1 Crea_User_bchecker" src="https://github.com/user-attachments/assets/dbad8274-f4e2-4ef8-930c-f445bdd0790e" />
 
