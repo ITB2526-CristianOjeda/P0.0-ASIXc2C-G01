@@ -33,8 +33,8 @@ Este manual describe cómo administrar el servidor **B-N01**, que aloja la base 
 
 | Equipo | Función | IP | Acceso a MySQL |
 | --- | --- | --- | --- |
-| W-N01 | Servidor web (DMZ) | 192.168.2.2 | Sí, con app\_user |
-| F-N01 | Servidor FTP (DMZ) | 192.168.2.3 | Solo si lo necesita, con ftp\_user |
+| W-N01 | Servidor web (DMZ) | 192.168.2.2 | Sí, con app_user |
+| F-N01 | Servidor FTP (DMZ) | 192.168.2.3 | Solo si lo necesita, con app_user |
 | D-N01 | DHCP, DNS, Docker | 192.168.1.3 | No |
 | CLI-WIN-N01 | Cliente Windows | 192.168.1.100 | Solo pruebas, con lectura |
 | CLI-LNX-N01 | Cliente Linux | 192.168.1.101 | Solo pruebas, con lectura |
