@@ -206,7 +206,7 @@ Las aplicaciones deben usar el nombre de tabla `equipamientos` y la columna `nam
 
 ### 7.2 Comandos de consulta habituales
 
-```sql
+```
 SHOW DATABASES;
 USE barcelona_educacio;
 SHOW TABLES;
@@ -222,24 +222,18 @@ SELECT * FROM equipamientos LIMIT 2\G
 1. **Subir o descargar el archivo** a B-N01 (con `scp` o `wget`).
 2. **Comprobar la codificación** con `file -i archivo.csv`. El archivo original del Ajuntament venía en UTF-16LE, que MySQL no admite en `LOAD DATA`, por lo que se convirtió con:
 
-```bash
-iconv -f UTF-16 -t UTF-8 educacion.csv -o educacion_utf8.csv
-```
+`iconv -f UTF-16 -t UTF-8 educacion.csv -o educacion_utf8.csv`
 
 3. **Crear la tabla vacía** con las columnas de la cabecera.
 4. **Activar la carga local** en el servidor y entrar con la opción del cliente:
 
-```sql
-SET GLOBAL local_infile = 1;
-```
+`SET GLOBAL local_infile = 1;`
 
-```bash
-mysql --local-infile=1 -u admin_db -p
-```
+`mysql --local-infile=1 -u admin_db -p`
 
 6. **Importar:**
 
-```sql
+```
 USE barcelona_educacio;
 LOAD DATA LOCAL INFILE '/home/bchecker/educacion_utf8.csv'
 INTO TABLE equipamientos
@@ -258,9 +252,7 @@ SELECT COUNT(*) FROM equipamientos;
 
 8. **Desactivar la carga local**, porque permite que el servidor solicite archivos al cliente:
 
-```sql
-SET GLOBAL local_infile = 0;
-```
+`SET GLOBAL local_infile = 0;`
 
 Si se repite la carga, hay que vaciar antes la tabla con `TRUNCATE TABLE equipamientos;`, porque `LOAD DATA` añade filas y no sustituye las existentes.
 
@@ -280,13 +272,11 @@ Si se repite la carga, hay que vaciar antes la tabla con `TRUNCATE TABLE equipam
 
 Comprobar el estado:
 
-```bash
-sudo ufw status numbered
-```
+`sudo ufw status numbered`
 
 Si está inactivo, el servidor no filtra nada y la seguridad depende solo de las cuentas de MySQL y del router. Se recomienda activarlo con reglas de una sola IP. **Permitir SSH siempre antes de activar**, para no perder el acceso remoto:
 
-```bash
+```
 sudo ufw allow ssh
 sudo ufw allow from 192.168.2.2 to any port 3306
 sudo ufw allow from 192.168.2.3 to any port 3306
@@ -322,9 +312,7 @@ nc -zv -w 3 192.168.1.2 3306
 
 Para saber si el tráfico llega a B-N01 se puede escuchar mientras se hace la prueba:
 
-```bash
-sudo tcpdump -ni any port 3306
-```
+`sudo tcpdump -ni any port 3306`
 
 ## 9. Copias de seguridad
 
@@ -337,7 +325,7 @@ GRANT SELECT, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER ON barcelona_educacio.* TO 
 
 ### 9.2 Hacer una copia
 
-```bash
+```
 mysqldump -u backup_user -p --single-transaction --no-tablespaces barcelona_educacio > /home/bchecker/backup_barcelona_educacio.sql
 ```
 
@@ -346,17 +334,13 @@ mysqldump -u backup_user -p --single-transaction --no-tablespaces barcelona_educ
 
 Comprobar que se ha generado:
 
-```bash
-ls -lh /home/bchecker/backup_barcelona_educacio.sql
-```
+`ls -lh /home/bchecker/backup_barcelona_educacio.sql`
 
 ### 9.3 Restaurar
 
 La restauración requiere escribir, por lo que se hace con `admin_db`:
 
-```bash
-mysql -u admin_db -p barcelona_educacio < /home/bchecker/backup_barcelona_educacio.sql
-```
+`mysql -u admin_db -p barcelona_educacio < /home/bchecker/backup_barcelona_educacio.sql`
 
 Una copia no está verificada hasta que se ha restaurado con éxito. Conviene probarla periódicamente, idealmente en una base de pruebas.
 
@@ -370,7 +354,7 @@ user=backup_user
 password=<CONTRASEÑA>
 ```
 
-```bash
+```
 chmod 600 /home/bchecker/.backup.cnf
 mysqldump --defaults-extra-file=/home/bchecker/.backup.cnf --single-transaction --no-tablespaces barcelona_educacio > backup.sql
 ```
