@@ -106,7 +106,7 @@ sudo systemctl enable mysql.service
 
 ### 5.3 Comprobar que escucha el puerto 3306 y el 33060
 
-```bash
+```
 sudo ss -tlnp | grep 3306
 ```
 
