@@ -96,7 +96,7 @@ Tras cualquier cambio se reinicia el servicio con:
 
 ### 5.2 Gestión del servicio
 
-```bash
+```
 sudo systemctl status mysql.service
 sudo systemctl start mysql.service
 sudo systemctl stop mysql.service
