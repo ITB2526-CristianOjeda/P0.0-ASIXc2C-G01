@@ -133,10 +133,10 @@ sudo tail -n 50 /var/log/mysql/error.log
 | Cuenta | Host | Finalidad | Privilegios |
 | --- | --- | --- | --- |
 | root | localhost | Emergencias y gestión de permisos | Todos |
-| admin\_db | localhost | Administración diaria | ALL PRIVILEGES sobre todo, sin GRANT OPTION |
-| app\_user | 192.168.2.2/3 | Aplicación web (W-N01) FTP (F-N01) | SELECT, INSERT, UPDATE, DELETE sobre barcelona\_educacio.\* |
+| admin_db | localhost | Administración diaria | ALL PRIVILEGES, sin GRANT OPTION |
+| app_user | 192.168.2.2/3 | Aplicación web (W-N01) FTP (F-N01) | SELECT, INSERT, UPDATE, DELETE sobre barcelona_educacio.* |
 | lectura | 192.168.1.101/2 | Consultas y pruebas (opcional) | SELECT sobre barcelona\_educacio.\* |
-| backup\_user | localhost | Copias de seguridad con mysqldump | SELECT, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER sobre barcelona\_educacio.\* |
+| backup_user | localhost | Copias de seguridad con mysqldump | SELECT, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER sobre barcelona_educacio.\* |
 
 Las cuentas `debian-sys-maint`, `mysql.infoschema`, `mysql.session` y `mysql.sys` las crea la instalación. No se deben borrar ni modificar.
 
