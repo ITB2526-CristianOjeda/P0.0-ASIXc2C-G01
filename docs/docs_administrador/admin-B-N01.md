@@ -135,12 +135,10 @@ sudo tail -n 50 /var/log/mysql/error.log
 | root | localhost | Emergencias y gestión de permisos | Todos |
 | admin_db | localhost | Administración diaria | ALL PRIVILEGES, sin GRANT OPTION |
 | app_user | 192.168.2.2/3 | Aplicación web (W-N01) FTP (F-N01) | SELECT, INSERT, UPDATE, DELETE sobre barcelona_educacio.* |
-| lectura | 192.168.1.101/2 | Consultas y pruebas (opcional) | SELECT sobre barcelona\_educacio.\* |
-| backup_user | localhost | Copias de seguridad con mysqldump | SELECT, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER sobre barcelona_educacio.\* |
+| lectura | 192.168.1.101/2 | Consultas y pruebas | SELECT sobre barcelona\_educacio.* |
+| backup_user | localhost | Copias de seguridad con mysqldump | SELECT, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER sobre barcelona_educacio.* |
 
 Las cuentas `debian-sys-maint`, `mysql.infoschema`, `mysql.session` y `mysql.sys` las crea la instalación. No se deben borrar ni modificar.
-
-Si la web solo muestra datos y no los modifica, conviene dejar a `app_user` únicamente `SELECT`.
 
 ### 6.3 Crear una cuenta
 
@@ -149,7 +147,7 @@ CREATE USER 'nombre_cualquiera'@'IP_Fija_o_localhost' IDENTIFIED BY '<CONTRASEÑ
 GRANT SELECT, INSERT, UPDATE, DELETE ON barcelona_educacio.* TO 'nombre_cualquiera'@'IP_Fija_o_localhost';
 ```
 
-Un usuario recién creado solo tiene el privilegio `USAGE`, que permite conectarse pero no acceder a datos. Los permisos sobre `base.*` se aplican a todas las tablas, presentes y futuras. Los cambios son inmediatos y no hace falta `FLUSH PRIVILEGES`.
+Un usuario recién creado solo tiene el privilegio `USAGE`, que permite conectarse pero no acceder a datos. Los permisos sobre `db.*` se aplican a todas las tablas, presentes y futuras. Los cambios son inmediatos y no hace falta `FLUSH PRIVILEGES`.
 
 ### 6.4 Modificar una cuenta
 
@@ -195,14 +193,14 @@ SHOW GRANTS FOR 'nombre_cualquiera'@'IP_Fija_o_localhost';
 
 | Elemento | Valor |
 | --- | --- |
-| Base de datos | barcelona\_educacio (utf8mb4) |
+| Base de datos | barcelona_educacio (utf8mb4) |
 | Tabla | equipamientos |
 | Origen | Open Data BCN, Ajuntament de Barcelona |
 | Contenido | Listado de equipamientos educativos de la ciudad (centros de todos los niveles, autoescuelas, formación de adultos, etc.) |
 | Formato original | CSV, 40 columnas, unas 2.700 filas |
 | Licencia | Creative Commons Attribution 4.0 |
 
-Todas las columnas se han creado como `TEXT`, porque el CSV trae campos vacíos, identificadores con ceros iniciales (por ejemplo `03` o `098005`) y booleanos escritos como `True`, que no encajan con tipos numéricos. Las columnas principales son `name`, `addresses_road_name`, `addresses_district_name`, `geo_epgs_4326_lat` y `geo_epgs_4326_lon`.
+Todas las columnas se han creado como `TEXT`, porque el CSV tiene campos vacíos, identificadores con ceros iniciales y booleanos escritos como `True`, que no encajan con tipos numéricos. Las columnas principales son `name`, `addresses_road_name`, `addresses_district_name`, `geo_epgs_4326_lat` y `geo_epgs_4326_lon`.
 
 Las aplicaciones deben usar el nombre de tabla `equipamientos` y la columna `name`.
 
@@ -222,15 +220,14 @@ SELECT * FROM equipamientos LIMIT 2\G
 `LOAD DATA` no crea la tabla: debe existir antes y sus columnas deben coincidir en número y orden con la cabecera del CSV.
 
 1. **Subir o descargar el archivo** a B-N01 (con `scp` o `wget`).
-2. **Comprobar la codificación** con `file -i archivo.csv`. El archivo original del Ajuntament venía en UTF-16LE, que MySQL no admite en `LOAD DATA`, por lo que se convirtió:
+2. **Comprobar la codificación** con `file -i archivo.csv`. El archivo original del Ajuntament venía en UTF-16LE, que MySQL no admite en `LOAD DATA`, por lo que se convirtió con:
 
 ```bash
 iconv -f UTF-16 -t UTF-8 educacion.csv -o educacion_utf8.csv
 ```
 
-3. **Eliminar los retornos de carro** de Windows si los hay (el comando `file` los indica como CRLF).
-4. **Crear la tabla vacía** con las columnas de la cabecera.
-5. **Activar la carga local** en el servidor y entrar con la opción del cliente:
+3. **Crear la tabla vacía** con las columnas de la cabecera.
+4. **Activar la carga local** en el servidor y entrar con la opción del cliente:
 
 ```sql
 SET GLOBAL local_infile = 1;
@@ -363,7 +360,7 @@ mysql -u admin_db -p barcelona_educacio < /home/bchecker/backup_barcelona_educac
 
 Una copia no está verificada hasta que se ha restaurado con éxito. Conviene probarla periódicamente, idealmente en una base de pruebas.
 
-### 9.4 Automatizar sin exponer la contraseña
+### 9.4 Automatizar sin exponer la contraseña (recomendado)
 
 Crear un archivo de credenciales legible solo por su propietario:
 
@@ -380,7 +377,7 @@ mysqldump --defaults-extra-file=/home/bchecker/.backup.cnf --single-transaction 
 
 Para programarlo, añadir la línea correspondiente con `crontab -e`. Guardar las copias fuera de B-N01 (otro equipo o almacenamiento) y limitar su número para no llenar el disco.
 
-## 10. Mantenimiento periódico
+## 10. Mantenimiento periódico (para el administador)
 
 | Frecuencia | Tarea | Comando o acción |
 | --- | --- | --- |
@@ -400,50 +397,7 @@ Ver quién está conectado en este momento:
 SELECT user, host FROM information_schema.processlist;
 ```
 
-## 11. Resolución de problemas
-
-| Síntoma | Causa probable | Qué hacer |
-| --- | --- | --- |
-| El cliente se queda esperando y acaba en timeout | Firewall o router descartan el tráfico | Revisar `ufw status`, reglas de R-N01 y `tcpdump` |
-| Connection refused | MySQL parado o bind-address incorrecto | `systemctl status mysql` y `ss -tlnp` |
-| Access denied for user 'x'@'IP' | Cuenta inexistente para esa IP, contraseña errónea o cuenta bloqueada | Verificar con `SELECT user, host FROM mysql.user;` |
-| ERROR 1044 o 1142 | Faltan permisos sobre la base o la tabla | `SHOW GRANTS` y completar el `GRANT` |
-| ERROR 1049 Unknown database | Nombre de base mal escrito | Usar `barcelona_educacio` |
-| Table doesn't exist o Unknown column | La aplicación usa nombres distintos | Usar la tabla `equipamientos` y la columna `name` |
-| La aplicación muestra solo un error genérico | La aplicación oculta el detalle | Mirar los registros de la aplicación y de Nginx o PHP |
-| mysql -h 127.0.0.1 falla en B-N01 | MySQL ya no escucha en 127.0.0.1:3306 | Conectar sin `-h` (por socket) |
-| MySQL no arranca tras un reinicio | La IP de bind-address ha cambiado | Fijar la IP de B-N01 y revisar `mysqld.cnf` |
-
-### Aplicaciones que se conectan
-
-Los datos de conexión que debe usar cada aplicación son:
-
-| Parámetro | Valor |
-| --- | --- |
-| Host | 192.168.1.2 (no localhost, porque la base está en otra máquina) |
-| Puerto | 3306 |
-| Base de datos | barcelona\_educacio |
-| Usuario | La cuenta de ese servicio (app\_user para la web) |
-
-El servidor web que ejecute código PHP necesita el módulo `php-mysql`. El archivo de configuración con la contraseña debe estar fuera de la carpeta pública y con permisos restringidos (por ejemplo `chmod 640`).
-
-## 12. Lista de comprobación de seguridad
-
-- [ ] `bind-address` apunta a 192.168.1.2 y no a 0.0.0.0
-- [ ] La IP de B-N01 es fija o reservada
-- [ ] `ufw` está activo, con SSH permitido y una regla por cada IP autorizada
-- [ ] Ninguna cuenta usa host `%` salvo justificación documentada
-- [ ] `root` y `admin_db` solo existen para `localhost`
-- [ ] Ninguna cuenta tiene `WITH GRANT OPTION` sin necesidad
-- [ ] Cada servicio usa su propia cuenta, con los permisos mínimos
-- [ ] Las contraseñas son robustas y distintas entre cuentas
-- [ ] `local_infile` está en 0 cuando no se está importando
-- [ ] Los archivos con credenciales tienen permisos 600 o 640
-- [ ] Hay una copia de seguridad reciente y probada
-- [ ] Los usuarios del sistema con acceso SSH no tienen `sudo` innecesario
-- [ ] El puerto 3306 no es accesible desde Internet
-
-## 13. Referencia rápida
+## 11. Referencia rápida
 
 | Acción | Comando |
 | --- | --- |
