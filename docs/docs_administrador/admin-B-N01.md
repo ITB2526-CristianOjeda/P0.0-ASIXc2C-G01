@@ -104,7 +104,7 @@ sudo systemctl restart mysql
 sudo systemctl enable mysql.service
 ```
 
-### 5.3 Comprobar que escucha
+### 5.3 Comprobar que escucha el puerto 3306 y el 33060
 
 ```bash
 sudo ss -tlnp | grep 3306
@@ -126,7 +126,7 @@ sudo tail -n 50 /var/log/mysql/error.log
 - **Una cuenta por servicio:** si una se compromete o se modifica, las demás no se ven afectadas, y en los registros se distingue quién hizo qué.
 - **Host concreto:** en MySQL la identidad de una cuenta es nombre más host. `'app_user'@'192.168.2.2'` y `'app_user'@'localhost'` son cuentas distintas, cada una con su contraseña y sus permisos. Cada cuenta admite un único host.
 - **Evitar comodines** como `'%'` o `'192.168.2.%'`.
-- **Sin `WITH GRANT OPTION`:** la gestión de usuarios y permisos queda reservada a root.
+- **Sin `WITH GRANT OPTION`:** la gestión de usuarios y permisos queda reservada a root y admin_db.
 
 ### 6.2 Cuentas del sistema
 
