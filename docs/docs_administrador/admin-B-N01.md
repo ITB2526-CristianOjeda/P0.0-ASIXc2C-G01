@@ -10,7 +10,6 @@ Este manual describe cómo administrar el servidor **B-N01**, que aloja la base 
 
 **No cubre:** la configuración de W-N01 (web), F-N01 (FTP), D-N01 (DHCP/DNS/Docker) ni del router R-N01, salvo lo que afecta al acceso a la base de datos.
 
-> Aviso: en este documento las contraseñas aparecen como `<CONTRASEÑA>`. No las escribas en este manual ni en capturas de pantalla.
 
 ## 2. Ficha del servidor
 
