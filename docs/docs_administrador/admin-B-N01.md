@@ -18,15 +18,15 @@ Este manual describe cómo administrar el servidor **B-N01**, que aloja la base 
 | Nombre | B-N01 |
 | Función | Servidor de base de datos |
 | Red | INTRANET 192.168.1.0/24 |
-| Dirección IP | 192.168.1.2/24 (debe ser fija o reserva DHCP) |
+| Dirección IP | 192.168.1.2/24 |
 | Gateway | 192.168.1.1 (R-N01) |
 | Sistema operativo | Ubuntu Server |
-| Software | MySQL Server 8.x |
+| Software | MySQL Server 8.0.46 |
 | Puerto de servicio | 3306/TCP |
 | Puerto X Protocol | 33060/TCP, solo en 127.0.0.1 |
 | Usuario del sistema | bchecker |
 | Cntraseña | bchecker121 |
-| Base de datos | barcelona\_educacio |
+| Base de datos | barcelona_educacio |
 | Tabla principal | equipamientos |
 
 ## 3. Entorno de red y accesos permitidos
