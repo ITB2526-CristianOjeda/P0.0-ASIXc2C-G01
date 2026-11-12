@@ -474,29 +474,31 @@ sudo nano /etc/hosts y cambiamos ubuntu por B-N01
 
 ## Instalamos MySQL:
 
-Con sudo apt install mysql-server instalamos MySQL:
+Con `sudo apt install mysql-server` instalamos MySQL:
 
 <img width="540" height="409" alt="4 Instalamos_MySQL" src="https://github.com/user-attachments/assets/3c5b6ae2-8dc5-4da5-ad92-56e66d0b5e5a" />
 
 
 ## Configuración del netplan:
 
-sudo nano /etc/netplan/00-installer-config.yaml  
+`sudo nano /etc/netplan/00-installer-config.yaml`
+
 <img width="670" height="274" alt="5 1 Fichero_Netplan" src="https://github.com/user-attachments/assets/a7007e12-2f93-4e56-8904-a82914c36313" />
 
 Las partes comentadas con \# son para cuando esté listo el router, la configuración comentada son el gateway y el servidor DNS.
 
-sudo netplan apply
+`sudo netplan apply`
 
 <img width="774" height="393" alt="5 2 Tabla_de_IPs" src="https://github.com/user-attachments/assets/b4759081-8e89-4282-b385-9005d6292d39" />
 
-Hacemos ping 8.8.8.8 (google) para comprobar que funcione correctamente  
+Hacemos `ping 8.8.8.8` (google) para comprobar que funcione correctamente  
 <img width="473" height="151" alt="5 3 Ping" src="https://github.com/user-attachments/assets/04c5b5e9-6a0f-4164-ae64-b8c76968e008" />
 
 
 ## Instalamos SSH para crear las claves públicas y privadas
 
-Instalamos SSH con sudo apt install ssh  
+Instalamos SSH con `sudo apt install ssh`
+
 <img width="960" height="724" alt="6 1 Instalamos SSH" src="https://github.com/user-attachments/assets/d3df3afd-d291-4140-9dae-6d0ba8a54faf" />
 
 
@@ -504,7 +506,7 @@ Comprobamos que el servicio esté activo antes de empezar con las claves
 <img width="961" height="199" alt="6 2 SSH_activo" src="https://github.com/user-attachments/assets/60a40727-123b-461e-b7f0-3a258fb13aa3" />
 
 
-Creamos la clave pública y privada con “ssh-keygen” (se guardarán en /home/bchecker/.ssh/id\_rsa):  
+Creamos la clave pública y privada con `ssh-keygen` (se guardarán en /home/bchecker/.ssh/id\_rsa):  
 <img width="961" height="348" alt="6 3 ssh-Keygen" src="https://github.com/user-attachments/assets/4f94f480-093b-469a-87e7-d5cc41ae2ef0" />
 
 
@@ -567,7 +569,7 @@ Permisos de admin\_db:
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘lectura1234’ | Contraseña para acceder |
 
-![][image18]
+
 
 | GRANT | Da los siguientes permisos |
 | :---- | :---- |
@@ -575,7 +577,8 @@ Permisos de admin\_db:
 | ON barcelona.\* | Estos permisos sólo los tendrá dentro de la base de datos barcelona\_educacio |
 | TO ‘app\_user’@’192.168.1.101’ | Solo si el usuario se conecta desde 192.168.1.101 con el propio usuario |
 
-## Backup\_user
+
+
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
@@ -584,7 +587,8 @@ Permisos de admin\_db:
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘backup1234’ | Contraseña para acceder |
 
-![][image19]
+
+
 
 | GRANT | Da los siguientes permisos. |
 | :---- | :---- |
@@ -593,12 +597,12 @@ Permisos de admin\_db:
 | SHOW VIEW | Permite consultar la definición de las vistas mediante SHOW CREATE VIEW. |
 | EVENT | Permite crear, modificar y eliminar eventos programados de MySQL. |
 | TRIGGER | Permite crear y eliminar triggers (disparadores) asociados a las tablas. |
-| ON barcelona.\* | Estos permisos sólo los tendrá dentro de la base de datos **“barcelona\_educacio”.** |
-| TO ‘backup\_user’@’localhost’ | Solo si el usuario se conecta desde localhost (máquina local) con el propio usuario. |
+| ON barcelona.* | Estos permisos sólo los tendrá dentro de la base de datos **“barcelona_educacio”.** |
+| TO ‘backup_user’@’localhost’ | Solo si el usuario se conecta desde localhost (máquina local) con el propio usuario. |
 
 ### Hacer backup
 
-mysqldump \-u backup\_user \-p \--single-transaction \--no-tablespaces barcelona\_educacio \> /ruta/cualquiera/Nombre\_del\_backup.sql
+mysqldump -u backup\_user \-p \--single-transaction \--no-tablespaces barcelona\_educacio \> /ruta/cualquiera/Nombre\_del\_backup.sql
 
 ### Restaurar backup
 
