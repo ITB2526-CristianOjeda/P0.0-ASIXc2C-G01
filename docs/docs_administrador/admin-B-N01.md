@@ -97,11 +97,11 @@ Tras cualquier cambio se reinicia el servicio con:
 ### 5.2 Gestión del servicio
 
 ```bash
-sudo systemctl status mysql
-sudo systemctl start mysql
-sudo systemctl stop mysql
+sudo systemctl status mysql.service
+sudo systemctl start mysql.service
+sudo systemctl stop mysql.service
 sudo systemctl restart mysql
-sudo systemctl enable mysql
+sudo systemctl enable mysql.service
 ```
 
 ### 5.3 Comprobar que escucha
