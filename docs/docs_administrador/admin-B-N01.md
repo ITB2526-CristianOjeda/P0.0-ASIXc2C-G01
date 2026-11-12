@@ -63,9 +63,8 @@ Si el prompt es `bchecker@B-N01:~$` estás en la terminal del sistema. Si es `my
 
 ### 4.2 Normas de acceso
 
-- `root``,`` ``ba``c``k``u``p``_``u``ser` y `admin_db` solo se usan desde `localhost`. Nunca de forma remota.
-- No escribir contraseñas en la línea de comandos (`-pContraseña`), porque quedan en el historial y en la lista de procesos. Usar `-p` sin valor.
-- Los compañeros con acceso SSH deben tener su propio usuario del sistema, sin `sudo`.
+- `root``,`` ``backup_user` y `admin_db` solo se usan desde `localhost`. Nunca de forma remota.
+- No escribir contraseñas en la línea de comandos, porque quedan en el historial y en la lista de procesos. Usar `-p` sin valor.
 - Recordar que `'localhost'` en MySQL significa conexiones desde la propia máquina, incluidas las de quien entre por SSH. La barrera real es la contraseña.
 
 ## 5. Servicio MySQL
@@ -78,7 +77,7 @@ La configuración del servidor está en:
 /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-Atención: el archivo `mysql.cnf` (sin la d final) es del cliente y no sirve para esto.
+Atención: el archivo `mysql.cnf` es del cliente y no sirve para esto.
 
 Parámetros relevantes en la sección `[mysqld]`:
 
@@ -87,11 +86,13 @@ bind-address = 192.168.1.2
 mysqlx-bind-address = 127.0.0.1
 ```
 
-- `bind-address` indica por qué dirección **propia** escucha el servidor. No filtra qué clientes se conectan: eso lo deciden el firewall, el router y la cuenta de MySQL.
+- `bind-address` indica qué dirección **propia** escucha el servidor. No filtra qué clientes se conectan: eso lo deciden el firewall, el router y la cuenta de MySQL.
 - Con `192.168.1.2` el servidor deja de escuchar en 127.0.0.1:3306. Las conexiones locales normales siguen funcionando por socket, pero `mysql -h 127.0.0.1` fallaría.
 - Si la IP de B-N01 cambiara, MySQL no arrancaría correctamente. Por eso la IP debe ser fija.
 
-Tras cualquier cambio se reinicia el servicio.
+Tras cualquier cambio se reinicia el servicio con:
+
+`sudo systemctl restart mysql.service`
 
 ### 5.2 Gestión del servicio
 
