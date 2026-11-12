@@ -32,25 +32,21 @@ No uses `localhost`: la base de datos está en otra máquina.
 
 Primero comprueba que llegas al servidor:
 
-```bash
-nc -zv -w 3 192.168.1.2 3306
-```
+`nc -zv -w 3 192.168.1.2 3306`
 
 Si responde `succeeded`, conéctate. Escribe `-p` sin contraseña y el programa te la pedirá:
 
-```bash
-mysql -u TU_USUARIO -p -h 192.168.1.2 barcelona_educacio
-```
+`mysql -u TU_USUARIO -p -h 192.168.1.2 barcelona_educacio`
 
 Si te falta el cliente en Ubuntu o Debian: `sudo apt install mysql-client`. Para salir, escribe `exit`.
 
 ### 4.2 Desde una herramienta gráfica
 
-En DBeaver, MySQL Workbench o similares, crea una conexión MySQL con los datos de la sección 3.
+En MySQL Workbench o similares, crea una conexión MySQL con los datos de la sección 3.
 
 ## 5. Qué datos hay
 
-La tabla se llama **`equipamientos`** y tiene unas 2.700 filas, una por centro o equipamiento educativo. Las columnas más útiles son:
+La tabla se llama "equipamientos" y tiene unas 2.700 filas, una por centro o equipamiento educativo. Las columnas más útiles son:
 
 | Columna | Contenido |
 | --- | --- |
