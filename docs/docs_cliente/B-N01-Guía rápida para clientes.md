@@ -110,7 +110,7 @@ Tus permisos dependen del tipo de cuenta:
 | Solo lectura | Consultar datos (`SELECT`) |
 | Aplicación | Consultar, insertar, modificar y borrar datos |
 
-Ninguna cuenta de cliente puede crear o borrar tablas ni gestionar usuarios. Si recibes `Access denied` al intentarlo, es el comportamiento esperado.&#32;
+Ninguna cuenta de cliente puede crear o borrar tablas ni gestionar usuarios. Si recibes `Access denied` al intentarlo, es el comportamiento esperado.
 
 ## 8. Normas de uso
 
