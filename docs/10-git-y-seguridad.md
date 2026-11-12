@@ -48,7 +48,8 @@ ssh -T git@github.com
 **Resultado esperado:**
 > `Hi username! You've successfully authenticated, but GitHub does not provide shell access.`
 
-![Captura de pantalla de la prueba exitosa ssh -T](./img/ssh-test.png)
+<img width="1211" height="280" alt="image" src="https://github.com/user-attachments/assets/789c3e9e-bba1-4b07-b487-e8dc7701d1b0" />
+
 
 ### 2.2. Configuración del remoto SSH en el repositorio
 Cambio de la URL del origen remoto del proyecto para utilizar el protocolo SSH:
@@ -91,4 +92,4 @@ git push origin main
 git pull origin main
 ```
 
-![Captura de pantalla ejecutando git push sin pedir contraseña](./img/git-push.png)
+<img width="809" height="293" alt="image" src="https://github.com/user-attachments/assets/4db1d766-bf0f-402e-8f63-5926a264107e" />
