@@ -522,7 +522,7 @@ Creamos la clave pública y privada con `ssh-keygen` (se guardarán en /home/bch
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
-| ‘admin\_db’ | Nombre del usuario |
+| ‘admin_db’ | Nombre del usuario |
 | ‘localhost’ | Desde dónde se podrá acceder al usuario |
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘admin1234’ | Contraseña para acceder |
@@ -533,9 +533,9 @@ Permisos de admin_db:
 | GRANT | Da los siguientes permisos |
 | :---- | :---- |
 | ALL PRIVILEGES | Otorga todos los privilegios posibles |
-| ON \*.\* | Define las base de datos y las tablas que se podrán manipular (\* significa todas las posibles) |
+| ON *.* | Define las base de datos y las tablas que se podrán manipular (\* significa todas las posibles) |
 | TO | A quien van dirigidos los privilegios |
-| ‘admin\_db’@’localhost’ | Usuario que recibirá los privilegios |
+| ‘admin_db’@’localhost’ | Usuario que recibirá los privilegios |
 
 ## app_user
 
@@ -556,8 +556,8 @@ Permisos de admin_db:
 | INSERT | Otorga permisos para insertar |
 | UPDATE | Otorga permisos para modificar |
 | DELETE | Otorga permisos para eliminar datos |
-| ON barcelona.* | Estos permisos sólo los tendrá dentro de la base de datos **“barcelona\_educacio”** |
-| TO ‘app\_user’@’192.168.2.2’ | Solo si el usuario se conecta desde 192.168.2.2 con el propio usuario |
+| ON barcelona.* | Estos permisos sólo los tendrá dentro de la base de datos **“barcelona_educacio”** |
+| TO ‘app_user’@’192.168.2.2’ | Solo si el usuario se conecta desde 192.168.2.2 con el propio usuario |
 
 ## Lectura
 
@@ -574,15 +574,15 @@ Permisos de admin_db:
 | GRANT | Da los siguientes permisos |
 | :---- | :---- |
 | SELECT | Otorga permisos de lectura |
-| ON barcelona.\* | Estos permisos sólo los tendrá dentro de la base de datos barcelona\_educacio |
-| TO ‘app\_user’@’192.168.1.101’ | Solo si el usuario se conecta desde 192.168.1.101 con el propio usuario |
+| ON barcelona.\* | Estos permisos sólo los tendrá dentro de la base de datos barcelona_educacio |
+| TO ‘app_user’@’192.168.1.101’ | Solo si el usuario se conecta desde 192.168.1.101 con el propio usuario |
 
 
 
 
 | CREATE USER | Crea el usuario |
 | :---- | :---- |
-| ‘backup\_user’ | Nombre del usuario |
+| ‘backup_user’ | Nombre del usuario |
 | ‘localhost’ | Desde dónde se podrá acceder al usuario |
 | IDENTIFIED BY | Que contraseña hará falta para acceder |
 | ‘backup1234’ | Contraseña para acceder |
@@ -602,18 +602,18 @@ Permisos de admin_db:
 
 ### Hacer backup
 
-mysqldump -u backup\_user \-p \--single-transaction \--no-tablespaces barcelona\_educacio \> /ruta/cualquiera/Nombre\_del\_backup.sql
+mysqldump -u backup_user -p --single-transaction --no-tablespaces barcelona_educacio > /ruta/cualquiera/Nombre_del_backup.sql
 
 ### Restaurar backup
 
-mysql \-u admin\_db \-p barcelona\_educacio \< /ruta/cualquiera/Nombre\_del\_backup.sql
+mysql -u admin_db -p barcelona_educacio < /ruta/cualquiera/Nombre_del_backup.sql
 
 ### Archivo mysqld.conf:
 
 <img width="957" height="729" alt="7 3 2 Fichero_mysqld cnf" src="https://github.com/user-attachments/assets/0dffc3fe-3ed0-4f40-ae92-0d4b9e90292f" />
  
 Editamos el bind address para que mysql conecte por la IP  192.168.1.2  
-![][image21]
+
 
 Reiniciamos el servicio y comprobamos que se hayan aplicado los cambios  
 <img width="706" height="81" alt="7 3 3 Prueba_funciona_3306" src="https://github.com/user-attachments/assets/f1b41ee9-7370-4f4a-9852-6d118d4bb944" />
@@ -623,7 +623,7 @@ Reiniciamos el servicio y comprobamos que se hayan aplicado los cambios
 
 ## Wget .CSV
 
-wget \-O educacion.csv "https\://opendata-ajuntament.barcelona.cat/data/dataset/f36b60f2-9541-4d08-b0f9-b0a9313fab3d/resource/29d9ff10-6892-4f16-9012-d5c4997857e7/download"
+`wget -O educacion.csv "https://opendata-ajuntament.barcelona.cat/data/dataset/f36b60f2-9541-4d08-b0f9-b0a9313fab3d/resource/29d9ff10-6892-4f16-9012-d5c4997857e7/download`
 
 ## Importar .CSV
 
@@ -631,7 +631,7 @@ Antes de importar a MySQL hace falta cambiar la versión UTF ( de UTF-16 que era
 <img width="608" height="52" alt="8 1 De_UTF-16_a_UTF-8" src="https://github.com/user-attachments/assets/33d06480-7e63-4f07-b937-4e1b495439ae" />
 
    
-Habilitamos la opción local\_infile=1 para que la base de datos pueda importar archivos que estén dentro de la máquina
+Habilitamos la opción local_infile=1 para que la base de datos pueda importar archivos que estén dentro de la máquina
 
 Con ayuda de la IA he hecho un script que cree desde 0 la base de datos para poder importar el csv.  
 <img width="675" height="189" alt="image" src="https://github.com/user-attachments/assets/3edc5754-8eda-4e8d-981c-6813efd6a98b" />
