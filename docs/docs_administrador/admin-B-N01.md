@@ -586,11 +586,11 @@ Permisos de admin_db:
 
 ### Hacer backup
 
-mysqldump -u backup_user -p --single-transaction --no-tablespaces barcelona_educacio > /ruta/cualquiera/Nombre_del_backup.sql
+`mysqldump -u backup_user -p --single-transaction --no-tablespaces barcelona_educacio > /ruta/cualquiera/Nombre_del_backup.sql`
 
 ### Restaurar backup
 
-mysql -u admin_db -p barcelona_educacio < /ruta/cualquiera/Nombre_del_backup.sql
+`mysql -u admin_db -p barcelona_educacio < /ruta/cualquiera/Nombre_del_backup.sql`
 
 ### Archivo mysqld.conf:
 
