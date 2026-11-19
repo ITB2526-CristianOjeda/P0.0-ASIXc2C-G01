@@ -33,6 +33,9 @@ En la carpeta `/config` se almacenan los ficheros de despliegue y configuración
 
 Toda la documentación técnica del despliegue, configuraciones y capturas de pantalla se encuentra estructurada en la carpeta `/docs`:
 
+### Planificación y Gestión del Proyecto
+* [00 - Introducción, Estudio Previo y Metodología Kanban](./docs/00-introduccion-y-gestion.md)
+
 ### Sprint 1: Planificación, Diseño y Red
 * [01 - Arquitectura de Red y Direccionamiento IP](./docs/01-arquitectura-y-red.md)
 * [02 - Despliegue y Configuración del Router (R-N01)](./docs/02-router-R-N01.md)
@@ -48,6 +51,9 @@ Toda la documentación técnica del despliegue, configuraciones y capturas de pa
 * [08 - Cliente Linux (CLI-LNX-N01)](./docs/08-cliente-linux.md)
 * [09 - Aplicación Web CRUD](./docs/09-aplicacion-web.md)
 * [10 - Control de Versiones Git y Seguridad SSH](./docs/10-git-y-seguridad.md)
+
+### Normativa y Seguridad Física
+* [11 - Prevención de Riesgos Laborales (PRL)](./docs/11-prevencion-riesgos-laborales.md)
 
 ---
 
