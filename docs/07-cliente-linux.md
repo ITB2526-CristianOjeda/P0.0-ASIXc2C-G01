@@ -9,7 +9,7 @@ IP
 
 DNS
 
-![img_070.png](docs/img/img_070.png)
+![img_070.png](img/img_070.png)
 
 Conexión a la web
 
