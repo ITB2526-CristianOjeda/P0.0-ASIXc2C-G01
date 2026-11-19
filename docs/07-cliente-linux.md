@@ -1,15 +1,16 @@
-### Tarea 3.1.1: Despliegue de Equipos Cliente (Windows)
 
-Instalar y configurar 1 cliente con sistema operativo Windows en la red Intranet
+### Tarea 3.1.2: Despliegue de Equipos Cliente (Linux)
+
+Instalar y configurar 1 cliente con sistema operativo Linux en la red Intranet
 
 IP
 
-![img_066.png](img/img_066.png)
+![img_069.png](img/img_069.png)
 
 DNS
 
-![img_067.png](img/img_067.png)
+![img_070.png](img/img_070.png)
 
-Conexion a la web
+Conexión a la web
 
-![img_068.png](img/img_068.png)
+![img_071.png](img/img_071.png)
