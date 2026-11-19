@@ -1,16 +1,15 @@
-### Tarea 2.5.2: Configuración de Credenciales del Usuario bchecker W-N01
+### Tarea 3.1.1: Despliegue de Equipos Cliente (Windows)
 
-Creamos el usuario bchecker en el W-N01
+Instalar y configurar 1 cliente con sistema operativo Windows en la red Intranet
 
-| sudo adduser bchecker<br>Password: bchecker123 |
-| --- |
+IP
 
-![img_055.png](img/img_055.png)
+![img_066.png](img/img_066.png)
 
-Agregamos el usuario bchecker al grupo sudo
+DNS
 
-| sudo usermod -aG sudo bchecker |
-| --- |
+![img_067.png](img/img_067.png)
 
-![img_056.png](img/img_056.png)
+Conexion a la web
 
+![img_068.png](img/img_068.png)
