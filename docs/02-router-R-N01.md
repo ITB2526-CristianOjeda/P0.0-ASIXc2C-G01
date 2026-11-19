@@ -12,9 +12,11 @@ Configuramos la red y asignamos la ip para cada interfaz de red excepto una ya q
 Probamos la conexión con los servidores de la intranet, en este caso con los Servidores D-N01 y B-N01
 
 - B-N01 (192.168.1.2)
+
 ![img_009.png](img/img_009.png)
 
 - D-N01(192.168.1.3)
+
 ![img_010.png](img/img_010.png)
 
 —
