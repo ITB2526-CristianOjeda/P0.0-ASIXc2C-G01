@@ -13,31 +13,31 @@ app.js: Lógica del cliente; realiza las peticiones fetch a api.php, controla el
 
 styles.css: Hoja de estilos con el diseño responsivo, tipografía y formato visual del panel y la tabla.
 
-![img_072.png](img/img_072.png)
+![img_072.png](../img/img_072.png)
 
 /var/www/html/db.php
 
-![img_073.png](img/img_073.png)
+![img_073.png](../img/img_073.png)
 
 /var/www/html/api.php
 
-![img_074.png](img/img_074.png)
+![img_074.png](../img/img_074.png)
 
 /var/www/html/index.html
 
-![img_075.png](img/img_075.png)
+![img_075.png](../img/img_075.png)
 
 /var/www/html/app.js
 
-![img_076.png](img/img_076.png)
+![img_076.png](../img/img_076.png)
 
 /var/www/html/styles.css
 
-![img_077.png](img/img_077.png)
+![img_077.png](../img/img_077.png)
 
 ### Tarea 3.2.1: Desarrollo de la Aplicación Web de Consulta + Base de datos
 
 Comprobar que la aplicación web de W-N01 conecta con la base de datos de B-N01.
 
-![img_078.png](img/img_078.png)
+![img_078.png](../img/img_078.png)
 
