@@ -25,7 +25,7 @@ Este manual describe cómo administrar el servidor **B-N01**, que aloja la base 
 | Puerto de servicio | 3306/TCP |
 | Puerto X Protocol | 33060/TCP, solo en 127.0.0.1 |
 | Usuario del sistema | bchecker |
-| Cntraseña | bchecker121 |
+| Contraseña | bchecker121 |
 | Base de datos | barcelona_educacio |
 | Tabla principal | equipamientos |
 
