@@ -16,12 +16,12 @@ A continuación se documenta la evolución del tablero Kanban de nuestro equipo,
 
 ### 1. Estado Inicial (Sprint Backlog)
 *Captura del tablero con las tareas recién asignadas, estimadas y listas para empezar.*
-<img width="1920" height="902" alt="image" src="https://github.com/user-attachments/assets/b65f14f2-3f98-47e5-ba33-8f2e9eb8d5f1" />
+<img width="648" height="875" alt="image" src="https://github.com/user-attachments/assets/0d993eb2-dbb4-477d-903f-27a30ca078ed" />
 
 
 ### 2. Estado Final (Done)
 *Captura del tablero reflejando el cierre de las tareas, cumplimiento de tiempos y objetivos logrados.*
-<img width="1871" height="892" alt="image" src="https://github.com/user-attachments/assets/ab0a9b7c-32fa-4830-bc14-ff6404df547f" />
+<img width="634" height="890" alt="image" src="https://github.com/user-attachments/assets/431d5cfb-4e6e-480b-ad8d-6a1d9e3bf4b2" />
 
 ---
 
