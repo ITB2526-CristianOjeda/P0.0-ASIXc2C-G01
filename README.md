@@ -29,7 +29,7 @@ En la carpeta `/config` se almacenan los ficheros de despliegue y configuración
 
 ---
 
-## 🏗️ Documentación Técnica (`/docs`)
+## 📚 Documentación Técnica (`/docs`)
 
 Toda la documentación técnica del despliegue, configuraciones y capturas de pantalla se encuentra estructurada en la carpeta `/docs`:
 
